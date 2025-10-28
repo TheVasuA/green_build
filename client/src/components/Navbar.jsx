@@ -32,7 +32,7 @@ const Navbar = () => {
               Gallery
             </a>
             <a
-              href="#"
+              href="https://wa.me/919071285992"
               className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md"
             >
               Contact Us
@@ -69,7 +69,7 @@ const Navbar = () => {
                 Gallery
               </a>
               <a
-                href="#"
+                href="https://wa.me/919071285992"
                 className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800"
               >
                 Contact Us
