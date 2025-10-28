@@ -1,5 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { navItems } from "../constants";
 import { BiMenu, BiPhoneCall } from "react-icons/bi";
@@ -17,12 +18,16 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
             <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
-            <span className="text-2xl tracking-tight bg-gradient-to-r from-green-600 via-yellow-500 to-red-400 inline-block text-transparent bg-clip-text ">Green Build Enterprises</span>
+            <Link to="/" className="text-2xl tracking-tight bg-gradient-to-r from-green-600 via-yellow-500 to-red-400 inline-block text-transparent bg-clip-text">
+              Green Build Enterprises
+            </Link>
           </div>
           <ul className="hidden lg:flex ml-14 space-x-12">
             {navItems.map((item, index) => (
               <li key={index}>
-                <a href={item.href}>{item.label}</a>
+                <Link to={item.href} className="hover:text-orange-500 transition-colors">
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -60,7 +65,9 @@ const Navbar = () => {
             <ul>
               {navItems.map((item, index) => (
                 <li key={index} className="py-4">
-                  <a href={item.href}>{item.label}</a>
+                  <Link to={item.href} onClick={toggleNavbar} className="hover:text-orange-500 transition-colors">
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>

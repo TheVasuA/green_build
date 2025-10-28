@@ -1,26 +1,21 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import FeatureSection from "./components/FeatureSection";
-import Workflow from "./components/Workflow";
 import Footer from "./components/Footer";
-import Pricing from "./components/Pricing";
-import Testimonials from "./components/Testimonials";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
 
 const App = () => {
   return (
-    <>
-      <Navbar />
-      <HeroSection />
-      <div className=" max-w-7xl mx-auto pt-14 md:pt-10 px-6">
-    
-        <FeatureSection />
-        <Workflow />
-   
-        <Testimonials />
+    <Router>
+      <div className="min-h-screen bg-black text-white">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
         <Footer />
       </div>
-
-    </>
+    </Router>
   );
 };
 
