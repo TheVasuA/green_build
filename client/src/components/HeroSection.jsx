@@ -4,8 +4,8 @@ import video3 from "../assets/video3.mp4";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col items-center mt-16 lg:mt-2">
-       <div className="flex relative justify-center max-w-8xl mx-auto  px-6 blur-[1px] object-cover opacity-30">
+    <div className="flex flex-col items-center mt-10 lg:mt-2">
+       <div className="flex relative justify-center max-w-8xl mx-auto  px-2 blur-[1px] object-cover opacity-40">
 
         <video
           autoPlay
@@ -17,12 +17,12 @@ const HeroSection = () => {
         </video>
 
       </div>
-<div className="absolute lg:mt-48 mt-14 px-20">
-<h1 className="   text-4xl sm:text-3xl lg:text-7xl text-center tracking-wide  ">
-        Green Build offers over 
+<div className="absolute max-w-8xl mx-auto lg:mt-40 mt-7 px-10 lg:px-300">
+<h1 className="   text-2xl sm:text-3xl lg:text-4xl text-center tracking-wide md:px-20 ">
+       
         <span className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text">
-          {" "}
-          one hundred models of industrial machines provider
+        
+           Green Build offers over electrical products, services and solutions for the industrial, commercial and residential markets
         </span>
       </h1 >
   
