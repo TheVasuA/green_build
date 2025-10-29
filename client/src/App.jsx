@@ -7,7 +7,7 @@ import AboutPage from "./pages/AboutPage";
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-theme text-theme">
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

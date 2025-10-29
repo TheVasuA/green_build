@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,5 +8,117 @@
 
 :root {
   font-family: "Poppins", sans-serif;
-  color-scheme: dark;
+  
+  /* Theme colors */
+  --color-bg: 255 255 255;
+  --color-bg-secondary: 248 250 252;
+  --color-bg-accent: 241 245 249;
+  --color-bg-muted: 244 244 245;
+  
+  --color-text: 17 24 39;
+  --color-text-secondary: 55 65 81;
+  --color-text-muted: 107 114 128;
+  --color-text-light: 156 163 175;
+  
+  --color-border: 229 231 235;
+  --color-border-light: 243 244 246;
+  
+  /* Brand colors */
+  --color-primary: 34 197 94;
+  --color-secondary: 249 115 22;
+  --color-accent: 239 68 68;
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .bg-theme {
+    background-color: rgb(var(--color-bg));
+  }
+  
+  .bg-theme-secondary {
+    background-color: rgb(var(--color-bg-secondary));
+  }
+  
+  .bg-theme-accent {
+    background-color: rgb(var(--color-bg-accent));
+  }
+  
+  .bg-theme-muted {
+    background-color: rgb(var(--color-bg-muted));
+  }
+  
+  .text-theme {
+    color: rgb(var(--color-text));
+  }
+  
+  .text-theme-secondary {
+    color: rgb(var(--color-text-secondary));
+  }
+  
+  .text-theme-muted {
+    color: rgb(var(--color-text-muted));
+  }
+  
+  .text-theme-light {
+    color: rgb(var(--color-text-light));
+  }
+  
+  .border-theme {
+    border-color: rgb(var(--color-border));
+  }
+  
+  .border-theme-light {
+    border-color: rgb(var(--color-border-light));
+  }
+  
+  .gradient-brand {
+    background: linear-gradient(to right, #22c55e, #3b82f6);
+  }
+  
+  .gradient-brand-text {
+    background: linear-gradient(to right, #22c55e, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Component styles */
+@layer components {
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md transition-colors duration-200 shadow-primary;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-500 hover:bg-secondary-600 text-white px-4 py-2 rounded-md transition-colors duration-200 shadow-secondary;
+  }
+  
+  .btn-accent {
+    @apply bg-accent-500 hover:bg-accent-600 text-white px-4 py-2 rounded-md transition-colors duration-200 shadow-accent;
+  }
+  
+  .btn-outline {
+    @apply border border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white px-4 py-2 rounded-md transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-theme border border-theme rounded-lg shadow-theme;
+  }
+  
+  .nav-link {
+    @apply text-theme-secondary hover:text-primary-500 transition-colors duration-200;
+  }
+  
+  /* Custom font classes */
+  .font-brand {
+    font-family: 'Playfair Display', ui-serif, Georgia, serif;
+  }
+  
+  .font-sen {
+    font-family: 'Sen', ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  .font-elegant-serif {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+  }
 }

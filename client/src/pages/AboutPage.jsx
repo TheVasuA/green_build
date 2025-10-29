@@ -2,17 +2,17 @@ import { Building, Award, Zap, Server, Shield, Database } from "lucide-react";
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen ">
       {/* Hero Section */}
-      <div className="relative pt-10 pb-10 border-b border-neutral-800">
+      <div className="relative pt-10 pb-10 border-b border-theme">
         <div className="max-w-7xl mx-auto px-6">
           {/* <div className="text-center">
-            <span className="bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
+            <span className="bg-theme-secondary text-secondary-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
               🏢 About Us
             </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl mt-10 lg:mt-20 tracking-wide">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl mt-10 lg:mt-20 tracking-wide text-theme">
               Green Build{" "}
-              <span className="bg-gradient-to-r from-green-600 via-yellow-500 to-red-400 text-transparent bg-clip-text">
+              <span className="gradient-brand-text">
                 Enterprises
               </span>
             </h1>
@@ -21,19 +21,19 @@ const AboutPage = () => {
           <div className="flex flex-wrap mt-10 lg:mt-20">
             <div className="w-full lg:w-1/2">
               <div className="flex flex-col justify-center lg:mx-6 lg:mx-0">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl tracking-wide">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl tracking-wide text-theme">
                   Delta Electronics{" "}
-                  <span className="bg-gradient-to-r from-green-600 via-yellow-500 to-red-400 text-transparent bg-clip-text">
+                  <span className="gradient-brand-text">
                     Channel Partner
                   </span>
                 </h2>
-                <p className="mt-4 text-lg text-neutral-500 max-w-4xl">
+                <p className="mt-4 text-lg text-theme-muted max-w-4xl">
                   Green Build Enterprises is a dedicated channel partner of Delta Electronics, 
                   specializing exclusively in the design, implementation, and maintenance of 
                   Uninterruptible Power Supply (UPS) systems and high-performance Data Center 
                   Infrastructure Solutions.
                 </p>
-                <p className="mt-4 text-lg text-neutral-500 max-w-4xl">
+                <p className="mt-4 text-lg text-theme-muted max-w-4xl">
                   Leveraging Delta&apos;s core expertise in power and thermal management, we serve 
                   as a mission-critical power and cooling architect for businesses where data 
                   continuity, reliability, and efficiency are paramount. Our focus is on 
