@@ -4,13 +4,13 @@ import video3 from "../assets/video6.mp4";
 const HeroSection = () => {
   return (
     <div className="flex flex-col items-center ">
-       <div className="flex relative justify-center max-w-8xl mx-auto blur-[1px] object-cover opacity-100">
+       <div className="flex relative justify-center max-w-8xl mx-auto  object-cover">
 
         <video
           autoPlay
           loop
           muted
-          className=" border border-secondary-500 shadow-lg shadow-secondary-200 mt-10 lg:mt-20 rounded-lg w-full h-auto object-cover"
+          className=" border border-secondary-500 shadow-lg shadow-secondary-200 mt-5 lg:mt-10 rounded-lg w-full h-auto object-cover"
         >
           <source src={video3} type="video/mp4" />
         </video>
