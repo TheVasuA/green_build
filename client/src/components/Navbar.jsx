@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { navItems } from "../constants";
-import { BiMenu, BiPhoneCall } from "react-icons/bi";
+import { BiPhoneCall } from "react-icons/bi";
 
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
