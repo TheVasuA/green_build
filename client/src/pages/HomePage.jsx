@@ -20,7 +20,7 @@ const dataCenterImages = [
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="lg:-mt-50">
       <HeroSection />
       <div className="max-w-7xl mx-auto pt-14 md:pt-10 px-6">
         
