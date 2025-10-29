@@ -15,12 +15,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 py-3 backdrop-blur-3xl border-b border-theme/80 bg-theme/80 lg:px-2">
+    <nav className="sticky top-0 z-50 py-3 backdrop-blur-3xl border-b border-theme/80 bg-theme/80 lg:px-2 px-2">
       <div className="container  mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
             <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
-            <Link to="/" className="text-3xl tracking-tight gradient-brand-text font-sen font-semibold">
+            <Link to="/" className="text-3xl tracking-tight text-green-600 font-sen font-semibold">
               Green Build
             </Link>
           </div>

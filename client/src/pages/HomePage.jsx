@@ -3,6 +3,7 @@ import FeatureSection from "../components/FeatureSection";
 import Workflow from "../components/Workflow";
 import Testimonials from "../components/Testimonials";
 import ProductScroll from "../components/ProductScroll";
+import AboutPage from "./AboutPage";
 
 // Sample images for different product categories
 const upsSystemImages = [
@@ -65,6 +66,9 @@ const HomePage = () => {
               </p>
             </div>
           </div>
+        </section>
+        <section className="py-12">
+<AboutPage />
         </section>
 
         {/* <FeatureSection />
