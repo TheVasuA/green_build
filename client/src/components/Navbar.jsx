@@ -1,11 +1,8 @@
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import logo from "../assets/logo.jpg";
-// import logo from "../assets/logo2.jpg";
 import logo from "../assets/logopng1.png";
 import { navItems } from "../constants";
-import { BiPhoneCall } from "react-icons/bi";
 
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
@@ -15,74 +12,144 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 py-3 backdrop-blur-3xl border-b border-theme/80 bg-theme/80 lg:px-2 px-2">
-      <div className="container  mx-auto relative lg:text-sm">
-        <div className="flex justify-between items-center">
+    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo Section */}
           <div className="flex items-center flex-shrink-0">
-            <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
-            <Link to="/" className="text-3xl tracking-tight text-green-600 font-sen font-semibold">
-              Green Build
+            <img className="h-10 w-10 mr-3 rounded-lg" src={logo} alt="Logo" />
+            <Link to="/" className="text-2xl font-bold">
+              <span className="gradient-brand-text font-sen">Green Build</span>
             </Link>
           </div>
-          <ul className="hidden lg:flex ml-14 space-x-12">
-            {navItems.map((item, index) => (
-              <li key={index}>
-                <Link to={item.href} className="nav-link">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
 
-          <div className="hidden lg:flex justify-center space-x-4 items-center">
-            <a href="#" className="py-2 px-3 border border-theme rounded-md text-theme-secondary hover:bg-theme-accent transition-colors">
-              Gallery
-            </a>
-            <a
-              href="https://wa.me/919071285992"
-              className="bg-gradient-secondary py-2 px-3 rounded-md hover:opacity-90 transition-opacity"
-            >
-              Contact Us
-            </a>
-            <div className="flex items-center gap-4 list-none">
-              <li>
-                <BiPhoneCall className="h-[50px] w-[50px] rounded-md bg-primary-500 p-2 text-2xl text-gray-300 hover:bg-primary-600 transition-colors" />
-              </li>
-              <li>
-                <div className="text-theme">
-                  <p className="text-sm text-gray-500">Call us on</p>
-                  <p className="text-md text-theme">+91 9071285992</p>
-                </div>
-              </li>
-            </div>
-          </div>
-          <div className="lg:hidden md:flex flex-col justify-end">
-            <button onClick={toggleNavbar} className="text-theme">
-              {mobileDrawerOpen ? <X /> : <Menu />}
-            </button>
-          </div>
-        </div>
-        {mobileDrawerOpen && (
-          <div className="fixed right-0 z-20 bg-theme w-full p-12 flex flex-col justify-center items-center lg:hidden border-l border-theme">
-            <ul>
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            <ul className="flex space-x-8">
               {navItems.map((item, index) => (
-                <li key={index} className="py-4">
-                  <Link to={item.href} onClick={toggleNavbar} className="nav-link">
+                <li key={index}>
+                  <Link 
+                    to={item.href} 
+                    className="text-theme hover:text-primary-600 font-medium transition-colors duration-200 relative group"
+                  >
                     {item.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-200 group-hover:w-full"></span>
                   </Link>
                 </li>
               ))}
             </ul>
-            <div className="flex space-x-6 mt-4">
-              <a href="#" className="py-2 px-3 border border-theme rounded-md text-theme-secondary">
-                Gallery
-              </a>
-              <a
-                href="https://wa.me/919071285992"
-                className="py-2 px-3 rounded-md bg-gradient-secondary text-white"
-              >
-                Contact Us
-              </a>
+          </div>
+
+          {/* Desktop CTA & Contact */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <a 
+              href="#" 
+              className="px-4 py-2 text-theme border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+            >
+              Gallery
+            </a>
+            <a
+              href="https://wa.me/919071285992"
+              className="px-4 py-2 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-lg hover:opacity-90 transition-opacity duration-200 font-medium"
+            >
+              Contact Us
+            </a>
+            
+            {/* Contact Info */}
+            <div className="flex items-center space-x-3 pl-4 border-l border-gray-300">
+              <div className="flex items-center justify-center w-10 h-10 bg-primary-100 rounded-lg">
+                <Phone className="h-5 w-5 text-primary-600" />
+              </div>
+              <div className="text-sm">
+                <p className="text-gray-500">Call us</p>
+                <p className="text-theme font-medium">+91 9071285992</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="lg:hidden">
+            <button 
+              onClick={toggleNavbar} 
+              className="p-2 rounded-lg text-theme hover:bg-gray-100 transition-colors duration-200"
+              aria-label="Toggle menu"
+            >
+              {mobileDrawerOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation Menu */}
+        {mobileDrawerOpen && (
+          <div className="lg:hidden">
+            <div className="fixed inset-0 z-40 bg-black bg-opacity-75" onClick={toggleNavbar}></div>
+            <div className="fixed top-0 right-0 z-50 h-full w-80 bg-white shadow-2xl border-l border-gray-200">
+              <div className="flex flex-col h-full bg-white">
+                {/* Mobile Header */}
+                <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                  <div className="flex items-center">
+                    <img className="h-8 w-8 mr-2 rounded-lg" src={logo} alt="Logo" />
+                    <span className="text-2xl font-bold gradient-brand-text font-sen">Green Build</span>
+                  </div>
+                  <button 
+                    onClick={toggleNavbar}
+                    className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+                  >
+                    <X className="h-6 w-6" />
+                  </button>
+                </div>
+
+                {/* Mobile Navigation Links */}
+                <div className="flex-1 px-6 py-6">
+                  <ul className="space-y-4">
+                    {navItems.map((item, index) => (
+                      <li key={index}>
+                        <Link 
+                          to={item.href} 
+                          onClick={toggleNavbar}
+                          className="block py-3 px-4 text-lg font-medium text-theme hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-colors duration-200"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Mobile CTA Buttons */}
+                  <div className="mt-8 space-y-4">
+                    <a 
+                      href="#" 
+                      className="block w-full py-3 px-4 text-center border border-gray-300 text-theme rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                    >
+                      Gallery
+                    </a>
+                    <a
+                      href="https://wa.me/919071285992"
+                      className="block w-full py-3 px-4 text-center bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-lg hover:opacity-90 transition-opacity duration-200 font-medium"
+                    >
+                      Contact Us
+                    </a>
+                  </div>
+
+                  {/* Mobile Contact Info */}
+                  <div className="mt-8 p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-center space-x-3 mb-3">
+                      <Phone className="h-5 w-5 text-primary-600" />
+                      <div>
+                        <p className="text-sm text-gray-500">Phone</p>
+                        <p className="font-medium text-theme">+91 9071285992</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Mail className="h-5 w-5 text-primary-600" />
+                      <div>
+                        <p className="text-sm text-gray-500">Email</p>
+                        <p className="font-medium text-theme">info@greenbuild.co</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}

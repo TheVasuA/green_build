@@ -22,14 +22,14 @@ const HomePage = () => {
   return (
     <div className="lg:-mt-50">
       <HeroSection />
-      <div className="max-w-7xl mx-auto pt-14 md:pt-10 px-6">
+      <div className="max-w-7xl mx-auto pt-2 md:pt-2 px-6">
         
         <section className="py-12">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-2xl font-bold text-center mb-10">
             Our Product Range
           </h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-6">
             {/* UPS Systems Slideshow */}
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-theme">UPS Systems</h3>
@@ -67,7 +67,7 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section className="py-12">
+        <section className="py-2">
 <AboutPage />
         </section>
 
