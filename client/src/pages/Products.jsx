@@ -7,117 +7,167 @@ const ProductsPage = () => {
   const [viewMode, setViewMode] = useState('grid');
   const [showFilters, setShowFilters] = useState(false);
 
-  // Categories data
+  // Categories data based on Delta Electronics India
   const categories = [
-    { id: 'all', name: 'All Products', count: 500 },
-    { id: 'cable-carriers', name: 'Cable and Hose Carriers, Drag Chains', count: 195 },
-    { id: 'cam-positioners', name: 'Cam Positioners', count: 16 },
-    { id: 'controllers', name: 'Controllers', count: 201 },
-    { id: 'disconnect-switch', name: 'Disconnect Switch Components', count: 3961 },
-    { id: 'electric-actuators', name: 'Electric Actuators/Cylinders', count: 728 },
-    { id: 'graphical-displays', name: 'Graphical/Numeric Displays', count: 21 },
-    { id: 'greases-lubricants', name: 'Greases and Lubricants', count: 112 },
-    { id: 'hmi', name: 'Human Machine Interface (HMI)', count: 1986 },
-    { id: 'automation-accessories', name: 'Industrial Automation Accessories', count: 9679 },
-    { id: 'industrial-equipment', name: 'Industrial Equipment', count: 2922 },
-    { id: 'industrial-lighting', name: 'Industrial Lighting', count: 3184 },
-    { id: 'lighting-control', name: 'Industrial Lighting Control', count: 0 },
-    { id: 'industrial-pcs', name: 'Industrial PCs', count: 4261 },
-    { id: 'industrial-sensors', name: 'Industrial Sensors', count: 109884 },
-    { id: 'industrial-specialized', name: 'Industrial Specialized', count: 661 }
+    { id: 'all', name: 'All Products', count: 50000 },
+    // Power Electronics
+    { id: 'components', name: 'Components', count: 5000 },
+    { id: 'power-system', name: 'Power and System', count: 3500 },
+    { id: 'fans-thermal', name: 'Fans and Thermal Management', count: 2800 },
+    { id: 'embedded-power', name: 'Embedded Power', count: 1200 },
+    { id: 'external-adapter', name: 'External Adapter', count: 900 },
+    // Mobility
+    { id: 'ev-powertrain', name: 'EV Powertrain System', count: 450 },
+    { id: 'automotive-electronics', name: 'Automotive Electronics', count: 650 },
+    // Automation
+    { id: 'industrial-automation', name: 'Industrial Automation', count: 4800 },
+    { id: 'building-automation', name: 'Building Automation', count: 2200 },
+    { id: 'collaborative-robots', name: 'Collaborative Robots (Cobots)', count: 25 },
+    { id: 'scada-systems', name: 'SCADA Systems', count: 180 },
+    // Infrastructure
+    { id: 'ict-infrastructure', name: 'ICT Infrastructure', count: 3200 },
+    { id: 'power-energy-solutions', name: 'Power and Energy Solutions', count: 4100 },
+    { id: 'display-visualization', name: 'Display and Visualization', count: 800 },
+    { id: 'ev-charging', name: 'EV Charging Solutions', count: 320 },
+    { id: 'data-center', name: 'Data Center Solutions', count: 1800 },
+    { id: 'telecom-power', name: 'Telecom Power Solutions', count: 1500 },
+    { id: 'smart-energy', name: 'Smart Energy Solutions', count: 2100 },
+    { id: 'indoor-air-quality', name: 'Indoor Air Quality Solutions', count: 650 }
   ];
 
-  // Sample products data
+  // Sample products data based on Delta Electronics
   const products = [
     {
       id: 1,
-      name: 'Cable Carrier System',
-      category: 'cable-carriers',
+      name: 'Industrial Power Supply',
+      category: 'components',
       image: '/api/placeholder/250/200',
-      description: 'Heavy-duty cable carrier for industrial applications',
-      items: 195,
-      inStock: true
+      description: 'High-efficiency industrial power supply units for automation systems',
+      items: 450,
+      inStock: true,
+      price: 'Contact for Quote',
+      features: ['High Efficiency', 'Compact Design', 'Wide Input Range']
     },
     {
       id: 2,
-      name: 'Graphical Display Unit',
-      category: 'graphical-displays',
+      name: 'AC Servo Motor Drive',
+      category: 'industrial-automation',
       image: '/api/placeholder/250/200',
-      description: 'High-resolution graphical display for control systems',
-      items: 21,
-      inStock: true
+      description: 'Precision AC servo motor drives for motion control applications',
+      items: 280,
+      inStock: true,
+      price: 'Contact for Quote',
+      features: ['High Precision', 'Low Vibration', 'Energy Efficient']
     },
     {
       id: 3,
-      name: 'Industrial Lubricant',
-      category: 'greases-lubricants',
+      name: 'Switching Power Supply',
+      category: 'power-system',
       image: '/api/placeholder/250/200',
-      description: 'Premium grade industrial lubricant',
-      items: 112,
-      inStock: true
+      description: 'Reliable switching power supplies for industrial equipment',
+      items: 520,
+      inStock: true,
+      price: 'Contact for Quote',
+      features: ['Stable Output', 'Overload Protection', 'Compact Size']
     },
     {
       id: 4,
-      name: 'HMI Touch Panel',
-      category: 'hmi',
+      name: 'Industrial Cooling Fan',
+      category: 'fans-thermal',
       image: '/api/placeholder/250/200',
-      description: 'Advanced touch panel for machine interface',
-      items: 1986,
-      inStock: true
+      description: 'High-performance cooling fans for thermal management',
+      items: 650,
+      inStock: true,
+      price: 'Contact for Quote',
+      features: ['Low Noise', 'Long Life', 'High Airflow']
     },
     {
       id: 5,
-      name: 'Automation Sensor',
-      category: 'automation-accessories',
+      name: 'DC Fast Charger',
+      category: 'ev-charging',
       image: '/api/placeholder/250/200',
-      description: 'High-precision automation sensor',
-      items: 9679,
-      inStock: true
+      description: 'Advanced DC fast charging stations for electric vehicles',
+      items: 45,
+      inStock: true,
+      price: 'Contact for Quote',
+      features: ['Fast Charging', 'Smart Control', 'Weather Resistant']
     },
     {
       id: 6,
-      name: 'Industrial Equipment',
-      category: 'industrial-equipment',
+      name: 'Building Management System',
+      category: 'building-automation',
       image: '/api/placeholder/250/200',
-      description: 'Robust industrial equipment solution',
-      items: 2922,
-      inStock: true
+      description: 'Comprehensive building automation and management system',
+      items: 120,
+      inStock: true,
+      price: 'Contact for Quote',
+      features: ['Energy Monitoring', 'Smart Control', 'Remote Access']
     },
     {
       id: 7,
-      name: 'LED Lighting System',
-      category: 'industrial-lighting',
+      name: 'Industrial Display Monitor',
+      category: 'display-visualization',
       image: '/api/placeholder/250/200',
-      description: 'Energy-efficient LED lighting for industrial use',
-      items: 3184,
-      inStock: true
+      description: 'High-resolution industrial display monitors for visualization',
+      items: 180,
+      inStock: true,
+      price: 'Contact for Quote',
+      features: ['High Resolution', 'Touch Interface', 'Industrial Grade']
     },
     {
       id: 8,
-      name: 'Industrial PC',
-      category: 'industrial-pcs',
+      name: 'UPS System',
+      category: 'power-energy-solutions',
       image: '/api/placeholder/250/200',
-      description: 'Rugged industrial computer system',
-      items: 4261,
-      inStock: true
+      description: 'Uninterruptible power supply systems for critical applications',
+      items: 95,
+      inStock: true,
+      price: 'Contact for Quote',
+      features: ['High Reliability', 'Scalable', 'Remote Monitoring']
     },
     {
       id: 9,
-      name: 'Proximity Sensor',
-      category: 'industrial-sensors',
+      name: 'Collaborative Robot (Cobot)',
+      category: 'collaborative-robots',
       image: '/api/placeholder/250/200',
-      description: 'High-performance proximity sensor',
-      items: 109884,
-      inStock: true
+      description: 'D-Bot series collaborative robots for smart manufacturing',
+      items: 12,
+      inStock: true,
+      price: 'Contact for Quote',
+      features: ['30kg Payload', '6-Axis', 'Safety Certified']
     },
     {
       id: 10,
-      name: 'Specialized Controller',
-      category: 'industrial-specialized',
+      name: 'Solar Inverter',
+      category: 'smart-energy',
       image: '/api/placeholder/250/200',
-      description: 'Specialized industrial controller unit',
-      items: 661,
-      inStock: true
+      description: 'High-efficiency solar PV inverters for renewable energy systems',
+      items: 220,
+      inStock: true,
+      price: 'Contact for Quote',
+      features: ['Grid-Tie', 'MPPT Control', 'Weather Resistant']
+    },
+    {
+      id: 11,
+      name: 'Data Center Cooling Solution',
+      category: 'data-center',
+      image: '/api/placeholder/250/200',
+      description: 'Precision cooling solutions for data center infrastructure',
+      items: 80,
+      inStock: true,
+      price: 'Contact for Quote',
+      features: ['Energy Efficient', 'Precise Control', 'High Capacity']
+    },
+    {
+      id: 12,
+      name: 'Telecom Rectifier',
+      category: 'telecom-power',
+      image: '/api/placeholder/250/200',
+      description: 'High-efficiency rectifiers for telecom power systems',
+      items: 340,
+      inStock: true,
+      price: 'Contact for Quote',
+      features: ['High Efficiency', 'Hot Swappable', 'Remote Monitoring']
     }
   ];
 
@@ -134,8 +184,26 @@ const ProductsPage = () => {
       {/* Header */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="text-3xl font-bold text-gray-900">Industrial Products</h1>
-          <p className="mt-2 text-gray-600">Comprehensive range of industrial automation and electrical components</p>
+          <h1 className="text-3xl font-bold text-gray-900">Power Electronics & Industrial Solutions</h1>
+          <p className="mt-2 text-gray-600">Innovative, clean and energy-efficient solutions for a better tomorrow - Power Electronics, Mobility, Automation & Infrastructure</p>
+          <div className="mt-4 flex flex-wrap gap-4 text-sm">
+            <div className="flex items-center space-x-2">
+              <span className="w-3 h-3 bg-blue-500 rounded-full"></span>
+              <span className="text-gray-600">Power Electronics</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="w-3 h-3 bg-green-500 rounded-full"></span>
+              <span className="text-gray-600">Mobility Solutions</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="w-3 h-3 bg-purple-500 rounded-full"></span>
+              <span className="text-gray-600">Automation</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="w-3 h-3 bg-orange-500 rounded-full"></span>
+              <span className="text-gray-600">Infrastructure</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -293,19 +361,33 @@ const ProductsPage = () => {
                     <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">{product.name}</h3>
                     <p className="text-gray-600 text-sm mb-3 line-clamp-2">{product.description}</p>
                     
+                    {/* Features */}
+                    {product.features && (
+                      <div className="flex flex-wrap gap-1 mb-3">
+                        {product.features.slice(0, 2).map((feature, index) => (
+                          <span key={index} className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+                            {feature}
+                          </span>
+                        ))}
+                        {product.features.length > 2 && (
+                          <span className="text-xs text-gray-500">+{product.features.length - 2} more</span>
+                        )}
+                      </div>
+                    )}
+                    
                     <div className="flex justify-between items-center mb-3">
                       <span className="text-sm text-gray-500">
-                        {product.items.toLocaleString()} Items
+                        {product.items.toLocaleString()} Items Available
                       </span>
                       <span className="text-lg font-bold text-primary-600">
-                        Request Quote
+                        {product.price || 'Request Quote'}
                       </span>
                     </div>
 
                     <div className={`flex gap-2 ${viewMode === 'list' ? 'justify-end' : ''}`}>
                       <button className="flex-1 bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors flex items-center justify-center space-x-2">
                         <ShoppingCart className="h-4 w-4" />
-                        <span>Add to Cart</span>
+                        <span>Request Quote</span>
                       </button>
                       <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
                         Details
