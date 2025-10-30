@@ -14,8 +14,9 @@ const upsSystemImages = [
 
 const dataCenterImages = [
 
-  "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
+  "https://filecenter.deltaww.com/products/images/2508/202508251436288971001.JPG?w=700",
+  "https://filecenter.deltaww.com/products/images/202510171647440052001.PNG?w=700",
+  "https://filecenter.deltaww.com/products/images/202412311701522756001.JPG?w=700"
 ];
 
 const HomePage = () => {
