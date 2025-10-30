@@ -44,7 +44,7 @@ const HomePage = () => {
               </span>
             </h1>
             <p className="text-xl text-theme-muted max-w-4xl mx-auto leading-relaxed">
-              We help industrial, commercial and data center customers make
+              We help industrial, commercial & data center customers make
               their infrastructure more energy efficient, reliable, safe and
               sustainable.
             </p>
