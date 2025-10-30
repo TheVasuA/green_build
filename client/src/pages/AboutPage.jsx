@@ -3,22 +3,7 @@
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-white">
-      <div className="relative pt-16 pb-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h1 className="text-3xl sm:text-4xl lg:text-7xl font-bold tracking-tight text-theme mb-6">
-              A leading partner for{" "}
-              <span className="gradient-brand-text">
-                critical power solutions
-              </span>
-            </h1>
-            <p className="text-xl text-theme-muted max-w-4xl mx-auto leading-relaxed">
-              We help industrial, commercial and data center customers make their infrastructure 
-              more energy efficient, reliable, safe and sustainable.
-            </p>
-          </div>
-        </div>
-      </div>
+
 
       <div className="bg-theme-secondary py-16">
         <div className="max-w-7xl mx-auto px-6">
