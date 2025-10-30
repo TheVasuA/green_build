@@ -19,24 +19,14 @@ export const useImageGallery = () => {
     const sampleData = {
       products: [
         {
-          src: "/images/ups-system-1.jpg",
+          src: "https://www.deltapowersolutions.com/media/download/Amplon-N-Gen3-1-3kVA-UPS-1.jpg.jpg",
           alt: "UPS System Model A",
-          fallback: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop"
+          fallback: "https://www.deltapowersolutions.com/media/download/Amplon-N-Gen3-1-3kVA-UPS-1.jpg.jpg"
         },
         {
-          src: "/images/ups-system-2.jpg", 
+          src: "https://www.deltapowersolutions.com/media/download/Amplon-N-Gen3-1-3kVA-UPS-1.jpg.jpg", 
           alt: "UPS System Model B",
-          fallback: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&h=400&fit=crop"
-        },
-        {
-          src: "/images/power-solution-1.jpg",
-          alt: "Power Solution System",
-          fallback: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&h=400&fit=crop"
-        },
-        {
-          src: "/images/data-center-equipment.jpg",
-          alt: "Data Center Equipment",
-          fallback: "https://images.unsplash.com/photo-1558618047-3c8ad9099c25?w=600&h=400&fit=crop"
+          fallback: "https://www.deltapowersolutions.com/media/download/Amplon-N-Gen3-1-3kVA-UPS-1.jpg.jpg"
         }
       ],
       facilities: [

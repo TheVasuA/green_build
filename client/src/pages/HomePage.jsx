@@ -7,9 +7,9 @@ import AboutPage from "./AboutPage";
 
 // Sample images for different product categories
 const upsSystemImages = [
-  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&h=400&fit=crop",
+  "https://filecenter.deltaww.com/products/Images/202502261742188195001.JPG?w=700",
+  "https://filecenter.deltaww.com/products/Images/202508011730268753001.JPG?w=700",
+  "https://filecenter.deltaww.com/products/Images/202502261743499230001.JPG?w=700",
 ];
 
 const dataCenterImages = [
