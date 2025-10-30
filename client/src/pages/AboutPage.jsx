@@ -22,7 +22,7 @@ const AboutPage = () => {
 
       <div className="bg-theme-secondary py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12 text-theme">Green Build at a glance</h2>
+          {/* <h2 className="text-3xl font-bold text-center mb-12 text-theme">Green Build at a glance</h2> */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold text-theme mb-2">500+</div>
@@ -53,7 +53,7 @@ const AboutPage = () => {
                 From power protection to complete infrastructure solutions
               </h2>
               <p className="text-lg text-theme-muted mb-6">
-                As a dedicated channel partner of Delta Electronics, Green Build Enterprises 
+                As a dedicated channel partner of Delta Electronics, Green Build 
                 is uniquely positioned to accelerate the digital transformation of critical 
                 infrastructure across diverse industries.
               </p>
@@ -77,7 +77,7 @@ const AboutPage = () => {
                 </div>
               </div>
               <blockquote className="text-theme-muted italic">
-                "Green Build Enterprises serves as our trusted partner in delivering 
+                "Green Build serves as our trusted partner in delivering 
                 world-class infrastructure solutions that enable our customers to achieve 
                 their digital transformation goals while maintaining the highest standards 
                 of reliability and efficiency."
@@ -88,13 +88,13 @@ const AboutPage = () => {
       </div>
 
       {/* What We Do - Core Solutions */}
-      <div className="bg-theme-secondary py-20">
+      <div className="bg-theme-secondary py-1">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-4 text-theme">
             What We Do: Core Business & Solutions
           </h2>
           <p className="text-lg text-theme-muted text-center max-w-4xl mx-auto mb-12">
-            Green Build Enterprises offers a total lifecycle approach to data center 
+            Green Build offers a total lifecycle approach to data center 
             and critical power management, utilizing the modular and high-efficiency 
             product portfolio of Delta Electronics.
           </p>
