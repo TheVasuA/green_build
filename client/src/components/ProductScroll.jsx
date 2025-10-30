@@ -59,13 +59,13 @@ const ProductScroll = ({
   return (
     <div className={`relative overflow-hidden rounded-lg shadow-theme-md ${className}`}>
       {/* Title */}
-      {title && (
+      {/* {title && (
         <div className="absolute top-4 left-4 z-20">
           <h3 className="text-white bg-black/50 px-3 py-1 rounded-md text-sm font-medium">
             {title}
           </h3>
         </div>
-      )}
+      )} */}
 
       {/* Main Image Container */}
       <div className={`relative ${height} overflow-hidden`}>
@@ -116,7 +116,7 @@ const ProductScroll = ({
         )}
 
         {/* Play/Pause Button */}
-        {showPlayPause && images.length > 1 && (
+        {/* {showPlayPause && images.length > 1 && (
           <button
             onClick={togglePlayPause}
             className="absolute bottom-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10"
@@ -124,7 +124,7 @@ const ProductScroll = ({
           >
             {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
           </button>
-        )}
+        )} */}
       </div>
 
       {/* Dots Navigation */}
@@ -146,9 +146,9 @@ const ProductScroll = ({
       )}
 
       {/* Image Counter */}
-      <div className="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded-md text-sm z-10">
+      {/* <div className="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded-md text-sm z-10">
         {currentIndex + 1} / {images.length}
-      </div>
+      </div> */}
     </div>
   );
 };

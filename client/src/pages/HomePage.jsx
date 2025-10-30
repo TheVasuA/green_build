@@ -19,18 +19,30 @@ const dataCenterImages = [
   "https://filecenter.deltaww.com/products/images/202412311701522756001.JPG?w=700"
 ];
 
+const powerQualityImages = [
+
+'https://filecenter.deltaww.com/products/images/202502261718266879001.JPG?w=700',
+'https://filecenter.deltaww.com/products/Images/2503/202503061455358364001.JPG?w=700'
+];
+
+const batterySystemImages = [
+'https://filecenter.deltaww.com/products/Images/2505/202505281238237736001.JPG?w=700',
+'https://filecenter.deltaww.com/products/Images/2412/202412041717335470001.JPG?w=700',
+'https://filecenter.deltaww.com/products/Images/2412/202412041716504765001.JPG?w=700'
+];
+
 const HomePage = () => {
   return (
     <div className="lg:-mt-50">
       <HeroSection />
       <div className="max-w-7xl mx-auto pt-2 md:pt-2 px-6">
-        
-        <section className="py-12">
+
+                <section className="py-8">
           <h2 className="text-2xl font-bold text-center mb-10">
             Our Product Range
           </h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             {/* UPS Systems Slideshow */}
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-theme">UPS Systems</h3>
@@ -41,12 +53,10 @@ const HomePage = () => {
                 autoPlayInterval={3000}
                 height="h-64"
                 showDots={true}
-                showArrows={true}
+              
                 className="rounded-lg overflow-hidden"
               />
-              <p className="text-theme-muted">
-                Reliable UPS systems for critical power backup solutions.
-              </p>
+  {/* showArrows={true} */}
             </div>
 
             {/* Data Center Solutions Slideshow */}
@@ -59,14 +69,48 @@ const HomePage = () => {
                 autoPlayInterval={3500}
                 height="h-64"
                 showDots={true}
-                showArrows={true}
+       
                 className="rounded-lg overflow-hidden"
               />
-              <p className="text-theme-muted">
-                Complete data center power and cooling solutions.
-              </p>
+
             </div>
           </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-6">
+            {/* UPS Systems Slideshow */}
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-theme">Power Quality</h3>
+              <ProductScroll
+                images={powerQualityImages}
+                title="Power Quality"
+                autoPlay={true}
+                autoPlayInterval={3000}
+                height="h-64"
+                showDots={true}
+         
+                className="rounded-lg overflow-hidden"
+              />
+
+            </div>
+
+            {/* Data Center Solutions Slideshow */}
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-theme">Battery Systems</h3>
+              <ProductScroll
+                images={batterySystemImages}
+                title="Battery Systems"
+                autoPlay={true}
+                autoPlayInterval={3500}
+                height="h-64"
+                showDots={true}
+       
+                className="rounded-lg overflow-hidden"
+              />
+
+            </div>
+          </div>
+
+          
         </section>
         <section className="py-2">
 <AboutPage />
