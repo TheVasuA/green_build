@@ -123,7 +123,7 @@ const DirectHeroSection = () => {
             <button
               onClick={toggleMute}
               disabled={isScrollMuted}
-              className={`absolute bottom-24 right-4 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 z-10 ${
+              className={`absolute bottom-3 lg:bottom-24 right-4 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 z-10 ${
                 isScrollMuted ? 'opacity-50 cursor-not-allowed' : ''
               }`}
               aria-label={isMuted ? "Unmute video" : "Mute video"}
