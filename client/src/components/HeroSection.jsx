@@ -8,7 +8,7 @@ import { Volume2, VolumeX } from "lucide-react";
 const DirectHeroSection = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isVideoError, setIsVideoError] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const [isScrollMuted, setIsScrollMuted] = useState(false);
   const videoRef = useRef(null);
 
