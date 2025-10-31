@@ -1,13 +1,24 @@
 import { Suspense } from "react";
-import video3 from "../assets/video6.mp4";
+import video3 from "../assets/video7.mp4";
 import posterImage from "../assets/slideImage/du1.png";
 import { useState, useRef, useEffect } from "react";
+import { Volume2, VolumeX } from "lucide-react";
 
 // Direct hero component without lazy loading
 const DirectHeroSection = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isVideoError, setIsVideoError] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const [isScrollMuted, setIsScrollMuted] = useState(false);
   const videoRef = useRef(null);
+
+  // Function to toggle mute/unmute
+  const toggleMute = () => {
+    if (videoRef.current && !isScrollMuted) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
 
   useEffect(() => {
     const video = videoRef.current;
@@ -23,12 +34,32 @@ const DirectHeroSection = () => {
       video.addEventListener('loadeddata', handleLoadedData);
       video.addEventListener('error', handleError);
 
+      // Scroll listener to mute video when user scrolls 50% of page
+      const handleScroll = () => {
+        const scrollTop = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / documentHeight) * 100;
+
+        if (scrollPercent >= 35 && !isScrollMuted) {
+          // Auto-mute when scrolled 50% down
+          video.muted = true;
+          setIsMuted(true);
+          setIsScrollMuted(true);
+        } else if (scrollPercent < 35 && isScrollMuted) {
+          // Allow manual control when scrolled back up
+          setIsScrollMuted(false);
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
       return () => {
         video.removeEventListener('loadeddata', handleLoadedData);
         video.removeEventListener('error', handleError);
+        window.removeEventListener('scroll', handleScroll);
       };
     }
-  }, []);
+  }, [isScrollMuted]);
 
   return (
     <div className="flex flex-col items-center">
@@ -68,23 +99,50 @@ const DirectHeroSection = () => {
           </div>
         )}
 
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          poster={posterImage}
-          className={`w-full h-auto object-cover transition-opacity duration-1000 ${
-            isVideoLoaded ? 'opacity-100' : 'opacity-0 absolute'
-          }`}
-          onLoadedData={() => setIsVideoLoaded(true)}
-          onError={() => setIsVideoError(true)}
-        >
-          <source src={video3} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div className="relative">
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted={isMuted}
+            playsInline
+            preload="metadata"
+            poster={posterImage}
+            className={`w-full h-auto object-cover transition-opacity duration-1000 ${
+              isVideoLoaded ? 'opacity-100' : 'opacity-0 absolute'
+            }`}
+            onLoadedData={() => setIsVideoLoaded(true)}
+            onError={() => setIsVideoError(true)}
+          >
+            <source src={video3} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          {/* Audio Control Button */}
+          {isVideoLoaded && !isVideoError && (
+            <button
+              onClick={toggleMute}
+              disabled={isScrollMuted}
+              className={`absolute bottom-24 right-4 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 z-10 ${
+                isScrollMuted ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
+              aria-label={isMuted ? "Unmute video" : "Mute video"}
+            >
+              {isMuted ? (
+                <VolumeX className="w-6 h-6" />
+              ) : (
+                <Volume2 className="w-6 h-6" />
+              )}
+            </button>
+          )}
+
+          {/* Scroll mute indicator */}
+          {isVideoLoaded && !isVideoError && isScrollMuted && (
+            <div className="absolute top-4 left-4 bg-black bg-opacity-70 text-white px-3 py-2 rounded-md text-sm z-10">
+              Video muted (scroll up to enable controls)
+            </div>
+          )}
+        </div>
 
 
       </div>

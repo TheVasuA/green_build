@@ -16,7 +16,7 @@ export const navItems = [
 
   { label: "Products", href: "/products" },
   { label: "Engineering Services", href: "/products" },
-  { label: "Enquiry", href: "/products" },
+  { label: "Enquiry", href: "/enquiry" },
 ];
 
 export const testimonials = [
