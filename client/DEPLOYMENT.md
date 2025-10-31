@@ -80,9 +80,8 @@ cp .env.example .env.local
 
 ```
 client/
-├── pages/
-│   └── api/
-│       └── send-enquiry.js    # Serverless email function
+├── api/
+│   └── send-enquiry.js        # Vercel serverless function
 ├── src/
 │   ├── pages/
 │   │   └── Enquiry.jsx        # Contact form
@@ -101,7 +100,7 @@ client/
    - Check Vercel function logs
 
 2. **API route not found**
-   - Ensure `pages/api/send-enquiry.js` exists
+   - Ensure `api/send-enquiry.js` exists
    - Verify vercel.json configuration
 
 3. **CORS errors**

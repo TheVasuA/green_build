@@ -1,6 +1,6 @@
 {
   "functions": {
-    "pages/api/send-enquiry.js": {
+    "api/send-enquiry.js": {
       "maxDuration": 10
     }
   },
